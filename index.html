@@ -7,7 +7,7 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
 
-    <title>UNICARIBE – Orientación Institucional</title>
+    <title>UNICARIBE – Conociendo Nuestras Carreras</title>
 
     <!-- Reveal core -->
     <link rel="stylesheet" href="dist/reset.css" />
@@ -29,12 +29,16 @@
         --primary: #0a2a66;
         --secondary: #123c8c;
         --accent: #3fa9f5;
+        --tech-cyan: #00d4ff;
+        --tech-purple: #9d4edd;
+        --tech-green: #10b981;
       }
 
       .reveal h1,
       .reveal h2,
       .reveal h3 {
         letter-spacing: 0.5px;
+        font-weight: 600;
       }
 
       .title-slide h2 {
@@ -52,6 +56,64 @@
         border-radius: 16px;
         max-width: 900px;
         margin: auto;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .card-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+        margin-top: 30px;
+      }
+
+      .student-card {
+        background: rgba(255, 255, 255, 0.06);
+        padding: 25px;
+        border-radius: 12px;
+        border-left: 4px solid var(--accent);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .student-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(63, 169, 245, 0.3);
+      }
+
+      .student-card h4 {
+        color: var(--tech-cyan);
+        margin-bottom: 10px;
+        font-size: 22px;
+      }
+
+      .student-card .career {
+        font-size: 14px;
+        color: #aaa;
+        margin-bottom: 15px;
+      }
+
+      .value-list {
+        list-style: none;
+        padding: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .value-list li {
+        background: rgba(63, 169, 245, 0.15);
+        padding: 12px 18px;
+        border-radius: 8px;
+        font-size: 16px;
+        text-align: center;
+        border: 1px solid rgba(63, 169, 245, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .value-list li:hover {
+        background: rgba(63, 169, 245, 0.25);
+        transform: scale(1.05);
       }
 
       ul.clean-list {
@@ -61,260 +123,735 @@
 
       ul.clean-list li {
         margin: 12px 0;
-        font-size: 20px;
+        font-size: 18px;
+        padding-left: 10px;
       }
 
       .icon {
         color: var(--accent);
         margin-right: 8px;
       }
+
+      .two-column {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        align-items: start;
+      }
+
+      .competencias-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin-top: 20px;
+      }
+
+      .competencia-item {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 15px;
+        border-radius: 8px;
+        font-size: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .competencia-item:hover {
+        background: rgba(255, 255, 255, 0.1);
+        transform: translateX(5px);
+      }
+
+      .highlight-text {
+        color: var(--tech-cyan);
+        font-weight: bold;
+      }
+
+      .tech-icon {
+        font-size: 60px;
+        margin-bottom: 15px;
+      }
+
+      .stat-box {
+        background: rgba(255, 255, 255, 0.08);
+        padding: 20px;
+        border-radius: 12px;
+        text-align: center;
+        border: 2px solid rgba(63, 169, 245, 0.3);
+      }
+
+      .stat-number {
+        font-size: 56px;
+        font-weight: bold;
+        line-height: 1;
+        margin-bottom: 10px;
+      }
+
+      .stat-label {
+        font-size: 16px;
+        opacity: 0.9;
+      }
+
+      /* Mejoras visuales adicionales */
+      .section-divider {
+        width: 60px;
+        height: 4px;
+        background: linear-gradient(90deg, var(--accent), var(--tech-cyan));
+        margin: 20px auto;
+        border-radius: 2px;
+      }
+
+      /* Animaciones personalizadas */
+      .slide-in-left {
+        animation: slideInLeft 0.8s ease-out;
+      }
+
+      @keyframes slideInLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      .fade-in-up {
+        animation: fadeInUp 0.8s ease-out;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Pulse effect for icons */
+      @keyframes pulse {
+        0%, 100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+      }
+
+      .tech-icon {
+        animation: pulse 2s ease-in-out infinite;
+      }
     </style>
-    <style>
-  /* ESTADO DESORGANIZADO */
-  .chaos img {
-    transform: rotate(-20deg) translateX(-200px) translateY(-120px);
-    opacity: 0.4;
-  }
-
-  .chaos h2 {
-    transform: rotate(15deg) translateX(220px);
-    opacity: 0.3;
-  }
-
-  .chaos h3 {
-    transform: rotate(-10deg) translateY(140px);
-    opacity: 0.4;
-  }
-
-  .chaos p {
-    transform: translateX(-180px) translateY(80px);
-    opacity: 0.4;
-  }
-
-  .chaos ul li {
-    transform: translateX(300px) rotate(10deg);
-    opacity: 0.3;
-  }
-
-  /* TRANSICIÓN SUAVE A ORDEN */
-  .title-slide * {
-    transition: all 1.5s ease-in-out;
-  }
-</style>
-
   </head>
 
   <body>
     <div class="reveal">
       <div class="slides">
-        <!-- TITLE SLIDE -->
-<section
-  class="title-slide chaos"
-  data-state="chaos-slide"
-  data-background-gradient="linear-gradient(135deg, #0A2A66, #123C8C)"
->
-<br>
-  <div
-    style="
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      height: 100%;
-      text-align: center;
-      color: #ffffff;
-    "
-  >
-    <!-- LOGO -->
-    <img
-      src="test/assets/img/logo.png"
-      alt="UNICARIBE"
-      class="animate__animated animate__zoomIn"
-      style="width: 260px"
-    />
-
-    <!-- TITULO -->
-    <div>
-      <h3
-        class="animate__animated animate__fadeInDown"
-        style="margin-bottom: 10px"
-      >
-        ORIENTACIÓN INSTITUCIONAL FGC 101
-      </h3>
-      <hr class="animate__animated animate__flash" style="  --animate-duration: 4s;">
-
-      <h3
-        class="animate__animated animate__fadeIn"
-        style="margin-bottom: 20px; animation-delay: 0.2s"
-      >
-        GRUPO 9
-      </h3>
-
-      <p
-        class="animate__animated animate__fadeIn"
-        style="font-size: 18px; animation-delay: 0.4s"
-      >
-       <h3> <strong>Docente:</strong> Dolores Feliz Santana</h3>
-      </p>
-    </div>
-
-    <!-- INTEGRANTES -->
-    <div
-      class="animate__animated animate__fadeInUp"
-      style="animation-delay: 0.6s"
-    >
-      <h3 style="margin-bottom: 15px">&nbsp; Integrantes</h3>
-
-      <ul
-        style="
-          list-style: none;
-          padding: 0;
-          margin: 0;
-          font-size: 22px;
-          line-height: 1.8;
-          
-        "
-      >
-        <li>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Alenny Vásquez Acosta (A00181320)</li>
-        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lisandel Jose Sosa Rambalde (A00181282)</li>
-        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Jose Miguel Cayetano Márquez (A00181312)</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-
-
-        <!-- BIENESTAR -->
-        <section data-background-color="#0a2a66">
-          <div class="card animate__animated animate__fadeInUp">
-            <h2>Bienestar Estudiantil</h2>
-            <p>
-              La Dirección de Bienestar Estudiantil pertenece a la Vicerrectoría
-              y se enfoca en acompañar, orientar y apoyar a los estudiantes
-              durante toda su vida académica.
-            </p>
-          </div>
-        </section>
-
-        <!-- PROGRAMAS -->
-        <section data-background-color="#123c8c">
-          <div class="card">
-            <h2 class="animate__animated animate__fadeInDown">
-              Programas y Servicios
-            </h2>
-            <ul class="clean-list">
-              <li class="fragment fade-up">
-                📘 Desarrollo Integral del Estudiante
-              </li>
-              <li class="fragment fade-up">
-                🧠 Orientación académica y psicológica
-              </li>
-              <li class="fragment fade-up">🎤 Talleres, webinars y charlas</li>
-              <li class="fragment fade-up">📝 Prueba POMA</li>
-            </ul>
-          </div>
-        </section>
-
-        <!-- PERMANENCIA -->
-        <section
-          data-background-gradient="linear-gradient(135deg, #0A2A66, #1C4FA1)"
-        >
-          <div class="card animate__animated animate__fadeIn">
-            <h2>Permanencia y Apoyo Tutorial</h2>
-            <p>
-              UNICARIBE ofrece acompañamiento continuo mediante tutorías,
-              orientación vocacional y apoyo académico para fortalecer el
-              desempeño y reducir la deserción estudiantil.
-            </p>
-          </div>
-        </section>
-
-        <!-- SERVICIOS MÉDICOS -->
-        <section data-background-color="#0a2a66">
-          <div class="card">
-            <h2 class="animate__animated animate__fadeInDown">
-              Servicios Médicos
-            </h2>
-            <ul class="clean-list">
-              <li class="fragment fade-up">🩺 Consultas básicas</li>
-              <li class="fragment fade-up">
-                🚑 Emergencias y primeros auxilios
-              </li>
-              <li class="fragment fade-up">📄 Certificados médicos</li>
-            </ul>
-          </div>
-        </section>
-
-        <!-- BECAS -->
-        <section data-background-color="#123c8c">
-          <div class="card">
-            <h2>Becas UNICARIBE</h2>
-            <p>
-              Programa de beneficios académicos internos y externos dirigido a
-              estudiantes, docentes y colaboradores.
-            </p>
-            <ul class="clean-list">
-              <li class="fragment fade-up">🎓 Personas con discapacidad</li>
-              <li class="fragment fade-up">🏅 Deportes y cultura</li>
-              <li class="fragment fade-up">📚 Segunda carrera</li>
-              <li class="fragment fade-up">🤝 Convenios institucionales</li>
-            </ul>
-          </div>
-        </section>
-
-        <!-- DEPORTES -->
-        <!-- DEPORTES -->
+        <!-- SLIDE DE TÍTULO -->
         <section
           data-background-gradient="linear-gradient(135deg, #0A2A66, #123C8C)"
         >
-          <div class="card">
-            <h2 class="animate__animated animate__fadeInDown">Deportes</h2>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              gap: 15px;
+              height: 100%;
+              text-align: center;
+              color: #ffffff;
+            "
+          >
+            <!-- LOGO -->
+            <img
+              src="https://unicaribe.edu.do/wp-content/uploads/2024/08/UNICARIBE.png"
+              alt="UNICARIBE"
+              class="animate__animated animate__zoomIn"
+              style="width: 240px; margin-bottom: 20px"
+            />
 
-            <ul class="clean-list" style="columns: 2; margin-top: 20px">
-              <li class="fragment fade-up">⚽ Fútbol</li>
-              <li class="fragment fade-up">🏀 Baloncesto</li>
-              <li class="fragment fade-up">🏐 Voleibol</li>
-              <li class="fragment fade-up">🥋 Judo</li>
-              <li class="fragment fade-up">🏓 Tenis de mesa</li>
-              <li class="fragment fade-up">🥋 Karate</li>
-              <li class="fragment fade-up">🏊 Natación</li>
-              <li class="fragment fade-up">♟️ Ajedrez</li>
-              <li class="fragment fade-up">🥋 Taekwondo</li>
-              <li class="fragment fade-up">🎾 Tenis de campo</li>
-              <li class="fragment fade-up">🏃 Atletismo</li>
-              <li class="fragment fade-up">🥎 Sóftbol</li>
-            </ul>
+            <!-- TÍTULO -->
+            <div>
+              <h2
+                class="animate__animated animate__fadeInDown"
+                style="margin-bottom: 15px; font-size: 42px"
+              >
+                Conociendo Nuestras Carreras
+              </h2>
+              
+              <div class="section-divider animate__animated animate__fadeIn" style="animation-delay: 0.3s;"></div>
+
+              <h3
+                class="animate__animated animate__fadeIn"
+                style="margin-bottom: 25px; animation-delay: 0.4s; color: #3fa9f5"
+              >
+                Orientación Institucional y Académica
+              </h3>
+
+              <p
+                class="animate__animated animate__fadeIn"
+                style="font-size: 20px; animation-delay: 0.5s"
+              >
+                <strong>Grupo 9</strong>
+              </p>
+
+              <p
+                class="animate__animated animate__fadeIn"
+                style="font-size: 18px; animation-delay: 0.6s; margin-top: 10px"
+              >
+                Docente: <strong>Dolores Féliz Santana</strong>
+              </p>
+            </div>
+
+            <!-- INTEGRANTES -->
+            <div
+              class="animate__animated animate__fadeInUp"
+              style="animation-delay: 0.8s; margin-top: 20px"
+            >
+              <h4 style="margin-bottom: 15px; font-size: 20px">Integrantes</h4>
+
+              <ul
+                style="
+                  list-style: none;
+                  padding: 0;
+                  margin: 0;
+                  font-size: 18px;
+                  line-height: 1.8;
+                "
+              >
+                <li>Alenny Vásquez Acosta (A00181320)</li>
+                <li>José Miguel Cayetano Márquez (A00181312)</li>
+                <li>Lisandel José Sosa Rambalde (A00181282)</li>
+              </ul>
+            </div>
           </div>
         </section>
 
-        <!-- UNIEMPLEO -->
+        <!-- INTRODUCCIÓN -->
         <section data-background-color="#0a2a66">
           <div class="card animate__animated animate__fadeInUp">
-            <h2>UNIEMPLEO</h2>
-            <p>
-              UNIEMPLEO es la agencia de empleo de UNICARIBE, creada para apoyar
-              a estudiantes y egresados incluso después de su graduación.
+            <h2 style="margin-bottom: 25px">Introducción</h2>
+            <div class="section-divider"></div>
+            <p style="text-align: left; line-height: 1.7; font-size: 19px">
+              Este proyecto explora nuestro desarrollo como estudiantes de
+              <span class="highlight-text">Ingeniería en Sistemas</span> y
+              <span class="highlight-text"
+                >Ingeniería de Redes y Telecomunicaciones</span
+              >, identificando las competencias que adquiriremos y cómo nos
+              prepararán para enfrentar los desafíos del mundo tecnológico.
             </p>
-            <p>
-              Funciona como intermediario entre empresas aliadas y el talento
-              universitario mediante una plataforma tecnológica eficiente.
+            <p
+              style="
+                text-align: left;
+                line-height: 1.7;
+                font-size: 19px;
+                margin-top: 20px;
+              "
+            >
+              Aunque nuestras carreras tienen enfoques diferentes, comparten un
+              núcleo común en el manejo de tecnologías, sistemas y soluciones
+              innovadoras para la industria.
             </p>
           </div>
         </section>
 
-        <!-- ESTUDIANTES Y EGRESADOS -->
+        <!-- NUESTRAS CARRERAS -->
         <section data-background-color="#123c8c">
-          <div class="card">
-            <h2>Estudiantes y Egresados</h2>
-            <ul class="clean-list">
-              <li class="fragment fade-up">💼 Inserción laboral</li>
-              <li class="fragment fade-up">🧑‍🎓 Pasantías profesionales</li>
-              <li class="fragment fade-up">🏢 Empresas aliadas</li>
-              <li class="fragment fade-up">🚀 Apoyo al emprendimiento</li>
-              <li class="fragment fade-up">🎯 Orientación laboral</li>
+          <h2 class="animate__animated animate__fadeInDown">
+            Nuestras Carreras
+          </h2>
+          <div class="section-divider"></div>
+          <div class="card-grid" style="margin-top: 40px">
+            <div class="student-card animate__animated animate__fadeInUp">
+              <div class="tech-icon">🌐</div>
+              <h4>Alenny Vásquez</h4>
+              <div class="career">Ing. Redes y Telecomunicaciones</div>
+            </div>
+
+            <div
+              class="student-card animate__animated animate__fadeInUp"
+              style="animation-delay: 0.2s"
+            >
+              <div class="tech-icon">⚙️</div>
+              <h4>José Miguel Cayetano</h4>
+              <div class="career">Ingeniería en Sistemas</div>
+            </div>
+
+            <div
+              class="student-card animate__animated animate__fadeInUp"
+              style="animation-delay: 0.4s"
+            >
+              <div class="tech-icon">💻</div>
+              <h4>Lisandel Sosa</h4>
+              <div class="career">Ingeniería en Sistemas</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECCIÓN ALENNY -->
+        <section>
+          <!-- Filosofía de Alenny -->
+          <section
+            data-background-gradient="linear-gradient(135deg, #0A2A66, #1C4FA1)"
+          >
+            <h2 style="color: #3fa9f5">Alenny Vásquez Acosta</h2>
+            <h3 style="margin-bottom: 30px; font-size: 28px">
+              Ing. Redes y Telecomunicaciones
+            </h3>
+            <div class="section-divider"></div>
+
+            <div class="two-column">
+              <div>
+                <h4 style="color: #3fa9f5; margin-bottom: 15px">🎯 Misión</h4>
+                <p style="font-size: 16px; text-align: left; line-height: 1.6">
+                  Formarme con responsabilidad y ética para aplicar los
+                  conocimientos en mejorar la conectividad, optimizar el acceso
+                  a la información y contribuir a soluciones seguras.
+                </p>
+              </div>
+              <div>
+                <h4 style="color: #3fa9f5; margin-bottom: 15px">🚀 Visión</h4>
+                <p style="font-size: 16px; text-align: left; line-height: 1.6">
+                  Consolidarme como una ingeniera competente y confiable, capaz
+                  de adaptarse a los constantes avances tecnológicos, aportando
+                  soluciones que fortalezcan la conectividad y la seguridad.
+                </p>
+              </div>
+            </div>
+
+            <div style="margin-top: 30px">
+              <h4 style="color: #3fa9f5; margin-bottom: 15px">💎 Valores</h4>
+              <ul class="value-list">
+                <li>✓ Responsabilidad</li>
+                <li>✓ Equidad</li>
+                <li>✓ Ética</li>
+                <li>✓ Compromiso</li>
+                <li>✓ Disciplina</li>
+              </ul>
+            </div>
+            <br>
+          </section>
+
+          <!-- Competencias Alenny -->
+          <section data-background-color="#0a2a66">
+            <h3 style="color: #3fa9f5; margin-bottom: 25px">
+              💪 Competencias a Desarrollar
+            </h3>
+            <div class="section-divider"></div>
+            <div class="competencias-grid">
+              <div class="competencia-item">
+                🔧 Optimización de recursos tecnológicos
+              </div>
+              <div class="competencia-item">🛠️ Supervisión y soporte técnico</div>
+              <div class="competencia-item">💡 Toma de decisiones</div>
+              <div class="competencia-item">
+                🧠 Pensamiento lógico y analítico
+              </div>
+              <div class="competencia-item">
+                💬 Comunicación efectiva de ideas
+              </div>
+              <div class="competencia-item">
+                ✅ Compromiso con la calidad y mejora continua
+              </div>
+            </div>
+          </section>
+
+          <!-- Campo Laboral Alenny -->
+          <section data-background-color="#123c8c">
+            <h3 style="color: #3fa9f5; margin-bottom: 25px">🌟 Campo Laboral</h3>
+            <div class="section-divider"></div>
+            <ul class="clean-list" style="text-align: left; max-width: 800px; margin: auto">
+              <li class="fragment fade-up">
+                📡 Consultor para diseño e implementación de infraestructura
+              </li>
+              <li class="fragment fade-up">
+                🔐 Administrador de servidores y seguridad TI
+              </li>
+              <li class="fragment fade-up">
+                🌐 Ingeniero de área informática o telemática
+              </li>
+              <li class="fragment fade-up">
+                ⚡ Administrador de redes y telecomunicaciones
+              </li>
+              <li class="fragment fade-up">
+                🎯 Líder de proyectos de redes y telecomunicaciones
+              </li>
             </ul>
+          </section>
+
+          <!-- Plan de Estudios Alenny -->
+          <section
+            data-background-gradient="linear-gradient(135deg, #0A2A66, #1C4FA1)"
+          >
+            <h3 style="color: #3fa9f5; margin-bottom: 25px">
+              📅 Plan para Culminar la Carrera
+            </h3>
+            <div class="section-divider"></div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                gap: 20px;
+                font-size: 24px;
+                text-align: center;
+                margin-top: 30px;
+              "
+            >
+              <div class="stat-box">
+                <div class="stat-number" style="color: #3fa9f5">12</div>
+                <div class="stat-label">Cuatrimestres</div>
+              </div>
+              <div class="stat-box">
+                <div class="stat-number" style="color: #00d4ff">53</div>
+                <div class="stat-label">Asignaturas</div>
+              </div>
+              <div class="stat-box">
+                <div class="stat-number" style="color: #9d4edd">186</div>
+                <div class="stat-label">Créditos</div>
+              </div>
+              <div class="stat-box">
+                <div class="stat-number" style="color: #10b981">4</div>
+                <div class="stat-label">Años</div>
+              </div>
+            </div>
+            <p style="margin-top: 40px; font-size: 18px">
+              <strong>🎓 Graduación proyectada:</strong> Septiembre 2029
+            </p>
+          </section>
+        </section>
+
+        <!-- SECCIÓN JOSÉ MIGUEL -->
+        <section>
+          <!-- Filosofía de José Miguel -->
+          <section
+            data-background-gradient="linear-gradient(135deg, #123C8C, #0A2A66)"
+          >
+            <h2 style="color: #00d4ff">José Miguel Cayetano</h2>
+            <h3 style="margin-bottom: 30px; font-size: 28px">
+              Ingeniería en Sistemas
+            </h3>
+            <div class="section-divider"></div>
+
+            <div class="two-column">
+              <div>
+                <h4 style="color: #00d4ff; margin-bottom: 15px">🎯 Misión</h4>
+                <p style="font-size: 16px; text-align: left; line-height: 1.6">
+                  Diseñar y desarrollar soluciones tecnológicas innovadoras que
+                  transformen la manera en que las personas y organizaciones
+                  interactúan con la tecnología, con enfoque en calidad,
+                  creatividad e impacto positivo.
+                </p>
+              </div>
+              <div>
+                <h4 style="color: #00d4ff; margin-bottom: 15px">🚀 Visión</h4>
+                <p style="font-size: 16px; text-align: left; line-height: 1.6">
+                  Ser un ingeniero reconocido por mi capacidad de
+                  innovación, liderazgo y excelencia técnica, siendo referente
+                  en soluciones tecnológicas avanzadas, éticas y sostenibles.
+                </p>
+              </div>
+            </div>
+
+            <div style="margin-top: 30px">
+              <h4 style="color: #00d4ff; margin-bottom: 15px">
+                💎 Valores Principales
+              </h4>
+              <ul class="value-list">
+                <li>✓ Excelencia profesional</li>
+                <li>✓ Integridad y ética</li>
+                <li>✓ Liderazgo y proactividad</li>
+                <li>✓ Aprendizaje continuo</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- Competencias José Miguel -->
+          <section data-background-color="#0a2a66">
+            <h3 style="color: #00d4ff; margin-bottom: 25px">
+              💪 Competencias a Desarrollar
+            </h3>
+            <div class="section-divider"></div>
+            <div class="competencias-grid">
+              <div class="competencia-item">
+                🔍 Análisis y resolución de problemas
+              </div>
+              <div class="competencia-item">
+                🏗️ Diseño de software eficiente
+              </div>
+              <div class="competencia-item">📊 Gestión de proyectos</div>
+              <div class="competencia-item">⚡ Metodologías ágiles</div>
+              <div class="competencia-item">💾 Programación avanzada</div>
+              <div class="competencia-item">🗄️ Manejo de bases de datos</div>
+              <div class="competencia-item">🔐 Seguridad en desarrollo</div>
+              <div class="competencia-item">🚀 Adaptación tecnológica</div>
+            </div>
+          </section>
+
+          <!-- Campo Laboral José Miguel -->
+          <section data-background-color="#123c8c">
+            <h3 style="color: #00d4ff; margin-bottom: 25px">🌟 Campo Laboral</h3>
+            <div class="section-divider"></div>
+            <ul class="clean-list" style="text-align: left; max-width: 800px; margin: auto">
+              <li class="fragment fade-up">
+                💻 Desarrollo de aplicaciones y software
+              </li>
+              <li class="fragment fade-up">🎨 Análisis y diseño de sistemas</li>
+              <li class="fragment fade-up">
+                📋 Gestión de proyectos tecnológicos
+              </li>
+              <li class="fragment fade-up">
+                🗃️ Administración de bases de datos
+              </li>
+              <li class="fragment fade-up">💡 Consultoría informática</li>
+              <li class="fragment fade-up">🤖 Inteligencia artificial</li>
+            </ul>
+          </section>
+
+          <!-- Plan de Estudios José Miguel -->
+          <section
+            data-background-gradient="linear-gradient(135deg, #123C8C, #0A2A66)"
+          >
+            <h3 style="color: #00d4ff; margin-bottom: 25px">
+              📅 Plan para Culminar la Carrera
+            </h3>
+            <div class="section-divider"></div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 30px;
+                font-size: 24px;
+                text-align: center;
+                margin-top: 30px;
+              "
+            >
+              <div class="stat-box">
+                <div class="stat-number" style="color: #00d4ff">29</div>
+                <div class="stat-label">Materias pendientes</div>
+              </div>
+              <div class="stat-box">
+                <div class="stat-number" style="color: #3fa9f5">29</div>
+                <div class="stat-label">Meses</div>
+              </div>
+              <div class="stat-box">
+                <div class="stat-number" style="color: #9d4edd">2.5</div>
+                <div class="stat-label">Años aprox.</div>
+              </div>
+            </div>
+            <p style="margin-top: 40px; font-size: 18px; line-height: 1.6">
+              <strong>📚 Estrategia:</strong> Una materia por mes para dominar
+              completamente cada asignatura y desarrollar competencias técnicas y profesionales sólidas.
+            </p>
+          </section>
+        </section>
+
+        <!-- SECCIÓN LISANDEL -->
+        <section>
+          <!-- Filosofía de Lisandel -->
+          <section
+            data-background-gradient="linear-gradient(135deg, #0A2A66, #123C8C)"
+          >
+            <h2 style="color: #9d4edd">Lisandel José Sosa</h2>
+            <h3 style="margin-bottom: 30px; font-size: 28px">
+              Ingeniería en Sistemas
+            </h3>
+            <div class="section-divider"></div>
+
+            <div class="two-column">
+              <div>
+                <h4 style="color: #9d4edd; margin-bottom: 15px">🎯 Misión</h4>
+                <p style="font-size: 16px; text-align: left; line-height: 1.6">
+                  Desarrollar y dirigir empresas innovadoras y sostenibles,
+                  aplicando conocimientos para generar valor económico y social,
+                  promoviendo la eficiencia, ética profesional y el crecimiento
+                  del talento humano.
+                </p>
+              </div>
+              <div>
+                <h4 style="color: #9d4edd; margin-bottom: 15px">🚀 Visión</h4>
+                <p style="font-size: 16px; text-align: left; line-height: 1.6">
+                  Ser un empresario líder y referente, reconocido por crear
+                  organizaciones competitivas, responsables y orientadas al
+                  desarrollo sostenible que contribuyan al progreso de la
+                  sociedad.
+                </p>
+              </div>
+            </div>
+
+            <div style="margin-top: 30px">
+              <h4 style="color: #9d4edd; margin-bottom: 15px">💎 Valores</h4>
+              <ul class="value-list">
+                <li>✓ Ética</li>
+                <li>✓ Innovación</li>
+                <li>✓ Compromiso social</li>
+                <li>✓ Liderazgo</li>
+                <li>✓ Mejora continua</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- Competencias Lisandel -->
+          <section data-background-color="#0a2a66">
+            <h3 style="color: #9d4edd; margin-bottom: 25px">
+              💪 Competencias Técnicas y Profesionales
+            </h3>
+            <div class="section-divider"></div>
+            <div class="two-column">
+              <div>
+                <h4 style="color: #9d4edd; font-size: 20px; margin-bottom: 15px">
+                  🔧 Técnicas
+                </h4>
+                <ul class="clean-list" style="font-size: 16px">
+                  <li>💻 Programación multi-lenguaje</li>
+                  <li>🗄️ Diseño y gestión de BD</li>
+                  <li>📱 Desarrollo de software</li>
+                  <li>🌐 Administración de redes</li>
+                  <li>🔒 Seguridad informática</li>
+                  <li>📊 Análisis de sistemas</li>
+                </ul>
+              </div>
+              <div>
+                <h4 style="color: #9d4edd; font-size: 20px; margin-bottom: 15px">
+                  🎯 Profesionales
+                </h4>
+                <ul class="clean-list" style="font-size: 16px">
+                  <li>🎯 Resolución de problemas</li>
+                  <li>🧠 Pensamiento crítico</li>
+                  <li>📋 Gestión de proyectos</li>
+                  <li>🚀 Innovación y creatividad</li>
+                  <li>👥 Trabajo en equipo</li>
+                  <li>📚 Aprendizaje continuo</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- Campo Laboral Lisandel -->
+          <section data-background-color="#123c8c">
+            <h3 style="color: #9d4edd; margin-bottom: 25px">🌟 Campo Laboral</h3>
+            <div class="section-divider"></div>
+            <div class="competencias-grid">
+              <div class="competencia-item">
+                💻 Desarrollador de software
+              </div>
+              <div class="competencia-item">🔍 Analista de sistemas</div>
+              <div class="competencia-item">🗄️ Admin. de bases de datos</div>
+              <div class="competencia-item">🛠️ Ingeniero de soporte</div>
+              <div class="competencia-item">🌐 Administrador de redes</div>
+              <div class="competencia-item">🔐 Especialista en seguridad</div>
+              <div class="competencia-item">📊 Gestor de proyectos tech</div>
+              <div class="competencia-item">💡 Consultor tecnológico</div>
+            </div>
+          </section>
+        </section>
+
+        <!-- DIRECCIÓN DE ESCUELA -->
+        <section data-background-color="#0a2a66">
+          <h2 style="margin-bottom: 30px">🏢 Escuela de Tecnología</h2>
+          <div class="section-divider"></div>
+          <div class="card">
+            <h3 style="color: #3fa9f5; margin-bottom: 20px">
+              Dirección y Servicios
+            </h3>
+
+            <div class="two-column" style="margin-top: 25px">
+              <div>
+                <h4 style="color: #00d4ff; font-size: 20px; margin-bottom: 15px">
+                  👨‍💼 Liderazgo
+                </h4>
+                <p style="font-size: 16px; text-align: left; line-height: 1.6">
+                  <strong>Gary Orel Cabrera Columna</strong><br />
+                  Vicerrector de Transformación Digital<br />
+                  Decano de la Escuela de Tecnología
+                </p>
+                <p style="font-size: 14px; text-align: left; margin-top: 10px; line-height: 1.5">
+                  Ingeniero en Sistemas | Maestría en Gerencia y Productividad
+                  | 17+ años de experiencia
+                </p>
+              </div>
+              <div>
+                <h4 style="color: #00d4ff; font-size: 20px; margin-bottom: 15px">
+                  🎓 Servicios
+                </h4>
+                <ul class="clean-list" style="font-size: 16px">
+                  <li>📚 Orientación académica</li>
+                  <li>📋 Gestión de procesos</li>
+                  <li>👥 Acompañamiento estudiantil</li>
+                  <li>💬 Charlas informativas</li>
+                  <li>🎯 Talleres de crecimiento</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- COMPROMISO CON UNICARIBE -->
+        <section
+          data-background-gradient="linear-gradient(135deg, #123C8C, #0A2A66)"
+        >
+          <h2 style="margin-bottom: 30px">
+            🤝 Nuestro Compromiso con UNICARIBE
+          </h2>
+          <div class="section-divider"></div>
+          <div class="card">
+            <ul class="clean-list" style="text-align: left; font-size: 18px">
+              <li class="fragment fade-up">
+                ✅ Participar activamente en todas las asignaturas
+              </li>
+              <li class="fragment fade-up">
+                📚 Aprovechar los recursos y programas universitarios
+              </li>
+              <li class="fragment fade-up">
+                🤝 Colaborar efectivamente en proyectos grupales
+              </li>
+              <li class="fragment fade-up">
+                🚀 Mantenernos actualizados con nuevas tecnologías
+              </li>
+              <li class="fragment fade-up">
+                💡 Desarrollar hábitos de disciplina y responsabilidad
+              </li>
+              <li class="fragment fade-up">
+                🎯 Aplicar ética profesional en todo momento
+              </li>
+              <li class="fragment fade-up">
+                🌟 Ser agentes de cambio positivo en la sociedad
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- CONCLUSIÓN -->
+        <section data-background-color="#0a2a66">
+          <h2 style="margin-bottom: 25px">💭 Conclusión</h2>
+          <div class="section-divider"></div>
+          <div class="card">
+            <p style="text-align: left; line-height: 1.7; font-size: 18px">
+              Hemos logrado comprender de manera profunda el camino que nos
+              espera como futuros profesionales. Este proyecto nos ha permitido
+              definir nuestra identidad profesional mediante nuestra misión,
+              visión y valores personales.
+            </p>
+            <p
+              style="
+                text-align: left;
+                line-height: 1.7;
+                font-size: 18px;
+                margin-top: 20px;
+              "
+            >
+              <span class="highlight-text">UNICARIBE</span> representa para
+              nosotros el escenario donde transformaremos nuestras aspiraciones
+              en realidades concretas. Aunque nuestras carreras tienen enfoques
+              distintos, convergen en un propósito común:
+              <strong
+                >aportar soluciones tecnológicas innovadoras, éticas y
+                sostenibles</strong
+              >
+              que beneficien a la sociedad.
+            </p>
           </div>
         </section>
 
@@ -337,16 +874,26 @@
               src="https://unicaribe.edu.do/wp-content/uploads/2024/08/UNICARIBE.png"
               alt="UNICARIBE"
               class="animate__animated animate__zoomIn"
-              style="width: 160px; margin-bottom: 25px"
+              style="width: 200px; margin-bottom: 30px"
             />
 
-            <h2 class="animate__animated animate__fadeInUp">
+            <h2
+              class="animate__animated animate__fadeInUp"
+              style="font-size: 48px; margin-bottom: 20px"
+            >
               ¡Gracias por su atención!
             </h2>
 
+            <div class="section-divider" style="margin: 20px auto;"></div>
+
             <p
               class="animate__animated animate__fadeIn"
-              style="margin-top: 15px; font-size: 20px; animation-delay: 0.3s"
+              style="
+                margin-top: 20px;
+                font-size: 22px;
+                animation-delay: 0.3s;
+                color: #3fa9f5;
+              "
             >
               Universidad del Caribe – UNICARIBE
             </p>
@@ -354,14 +901,26 @@
             <p
               class="animate__animated animate__fadeIn"
               style="
-                margin-top: 10px;
-                font-size: 16px;
-                opacity: 0.85;
+                margin-top: 15px;
+                font-size: 18px;
+                opacity: 0.9;
                 animation-delay: 0.6s;
               "
             >
-              Orientación Institucional · Grupo 9
+              Orientación Institucional y Académica · Grupo 9
             </p>
+
+            <div
+              class="animate__animated animate__fadeIn"
+              style="
+                margin-top: 30px;
+                font-size: 14px;
+                opacity: 0.7;
+                animation-delay: 0.9s;
+              "
+            >
+              <p>Alenny Vásquez • José Miguel Cayetano • Lisandel Sosa</p>
+            </div>
           </div>
         </section>
       </div>
@@ -375,40 +934,11 @@
     <script>
       Reveal.initialize({
         hash: true,
-        transition: "fade",
+        transition: "slide",
+        transitionSpeed: "default",
+        backgroundTransition: "fade",
         plugins: [RevealHighlight, RevealNotes],
       });
-
-      
-      let chaosTimeout = null;
-
-  function handleChaos(slide) {
-    if (!slide || !slide.classList.contains("chaos")) return;
-
-    // Reiniciar estado caótico
-    slide.classList.add("chaos");
-
-    // Limpiar timeout previo
-    if (chaosTimeout) clearTimeout(chaosTimeout);
-
-    // Reorganizar luego de 8s
-    chaosTimeout = setTimeout(() => {
-      slide.classList.remove("chaos");
-    }, 0);
-  }
-
-  // Cuando Reveal carga (IMPORTANTE para el primer slide)
-  Reveal.on("ready", (event) => {
-    handleChaos(event.currentSlide);
-  });
-
-  // Cuando se cambia de slide
-  Reveal.on("slidechanged", (event) => {
-    handleChaos(event.currentSlide);
-  });
     </script>
   </body>
 </html>
-
- 
-
